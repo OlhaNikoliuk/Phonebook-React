@@ -16,6 +16,7 @@ import {
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import contactsReducer from '../redux/contacts/contacts-slice';
+import authReduser from '../redux/auth/auth-slice';
 
 const middleware = [
   ...getDefaultMiddleware({
@@ -23,7 +24,6 @@ const middleware = [
       ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
     },
   }),
-  
 ];
 
 const authPersistConfig = {
@@ -33,16 +33,18 @@ const authPersistConfig = {
 };
 
 const rootReducer = combineReducers({
-  //auth: persistReducer(authPersistConfig, authreducer)
   contacts: contactsReducer,
-});
+  auth: persistReducer(authPersistConfig, authReduser),
 
+  //auth: authReduser,
+});
 
 export const store = configureStore({
   reducer: rootReducer,
+  middleware,
   devTools: process.env.NODE_ENV === 'development',
 });
 
-const persistor = persistStore(store);
+export const persistor = persistStore(store);
 
-export default { store, persistor };
+

@@ -2,7 +2,8 @@ import { lazy, Suspense } from 'react';
 //import { Toaster } from 'react-hot-toast';
 //import { HiUsers } from 'react-icons/hi';
 //import { FaAddressBook } from 'react-icons/fa';
-//import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { Redirect, Route, Switch } from 'react-router-dom';
 import Container from './components/Container/Container';
 //import Section from './components/Section/Section';
@@ -15,12 +16,17 @@ import RegisterPage from './pages/RegisterPage';
 import LoginPage from './pages/LoginPage';
 import ContactsPage from './pages/ContactsPage';
 import { Spinner } from './components/Spinner/Spinner';
+import { getCurrentUser } from './redux/auth/auth-operations';
 
 //import { isLoadingValue } from './redux/contacts/contacts-selectors';
 
 function App() {
+   const dispatch = useDispatch()
   //const isLoading = useSelector(isLoadingValue);
 
+  useEffect(() => {
+    dispatch(getCurrentUser())
+  }, [dispatch])
   return (
     <>
       <NavBar />
@@ -40,9 +46,9 @@ function App() {
               <LoginPage />
             </Route>
 
-            {/* <Route path='/contacts'>
+            <Route path='/contacts'>
               <ContactsPage />
-            </Route> */}
+            </Route>
 
             <Redirect to='/' />
           </Switch>
