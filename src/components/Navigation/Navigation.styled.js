@@ -1,20 +1,20 @@
-import styled from "@emotion/styled/macro";
-import { NavLink } from "react-router-dom";
+import styled from '@emotion/styled/macro';
+import { NavLink } from 'react-router-dom';
 
 export const HeaderLink = styled(NavLink)`
-  font-family: var(--title-font);
+  font-family: var(--main-font);
 
   font-size: 24px;
   line-height: 36px;
+  font-weight: 600;
   text-align: center;
   text-decoration: none;
 
-  font-weight: 500;
   color: var(--white-color);
+  transition: all 300ms linear;
 
-  &:not(:last-child) {
-    margin-right: 20px;
-  }
+  margin: 4px;
+
   &.active {
     font-size: 26px;
     text-decoration: underline;

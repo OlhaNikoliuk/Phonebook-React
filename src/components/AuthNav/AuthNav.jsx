@@ -1,39 +1,19 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { BsDot } from 'react-icons/bs';
+import { HeaderLink } from '../Navigation/Navigation.styled';
+import { LinkWrap } from './AuthNav.styled';
 
-const styles = {
-  link: {
-    display: 'inline-block',
-    textDecoration: 'none',
-    padding: 12,
-    fontWeight: 700,
-    color: '#2A363B',
-  },
-  activeLink: {
-    color: '#E84A5F',
-  },
-};
-
- function AuthNav() {
+function AuthNav() {
   return (
-    <div>
-      <NavLink
-        to="/register"
-        exact
-        style={styles.link}
-        activeStyle={styles.activeLink}
-      >
-        Регистрация
-      </NavLink>
-      <NavLink
-        to="/login"
-        exact
-        style={styles.link}
-        activeStyle={styles.activeLink}
-      >
-        Логин
-      </NavLink>
-    </div>
+    <LinkWrap>
+      <HeaderLink to='/register' exact>
+        Sign Up
+      </HeaderLink>
+      <BsDot size='22' />
+      <HeaderLink to='/login' exact>
+        Log In
+      </HeaderLink>
+    </LinkWrap>
   );
 }
 

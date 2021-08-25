@@ -11,7 +11,6 @@ function NavBar() {
   return (
     <Header>
       <Navigation />
-
       {isLoggedIn ? <UserMenu /> : <AuthNav />}
     </Header>
   );

@@ -10,7 +10,6 @@ const token = {
 };
 
 axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
-//axios.defaults.baseURL = 'https://611bcc0422020a00175a473e.mockapi.io';
 
 export async function register(credentials) {
   const { data } = await axios.post('/users/signup', credentials);
@@ -33,7 +32,7 @@ export async function logout() {
 export async function getCurrentUser(persistedToken) {
   token.set(persistedToken);
 
-  const { data } = await axios.get("/users/current");
+  const { data } = await axios.get('/users/current');
   return data;
 }
 

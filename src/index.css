@@ -3,6 +3,7 @@
   --text-color-main: #283655;
   --text-color-accent: #ec96a4;
   --notification-color: #cb0000;
+  --main-font: "Alegreya Sans", sans-serif;
 }
 
 body {

@@ -1,5 +1,7 @@
-function HomePage(){
-  return <div>Create your own Phonebook </div>
+import Home from '../components/Home/Home';
+
+function HomePage() {
+  return <Home></Home>;
 }
 
-export default HomePage
+export default HomePage;

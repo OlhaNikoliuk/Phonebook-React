@@ -1,17 +1,18 @@
 import { Toaster } from 'react-hot-toast';
 import { HiUsers } from 'react-icons/hi';
 import { FaAddressBook } from 'react-icons/fa';
-import Container from '../components/Container/Container';
+import { useSelector } from 'react-redux';
 import Section from '../components/Section/Section';
 import ContactForm from '../components/ContactForm/ContactForm';
 import ContactList from '../components/ContactList/ContactList';
 import Filter from '../components/Filter/Filter';
-import Spinner from '../components/Spinner/Spinner';
+import { Spinner } from '../components/Spinner/Spinner';
+import { isLoadingValue } from '../redux/contacts/contacts-selectors';
 
-
-function ContactsPage(){
+function ContactsPage() {
+  const isLoading = useSelector(isLoadingValue);
   return (
-    <Container>
+    <>
       <Toaster />
       <Section title={'Phonebook'}>
         <FaAddressBook size='24' />
@@ -23,9 +24,9 @@ function ContactsPage(){
         <Filter />
         <ContactList />
       </Section>
-      {/* {isLoading && <Spinner />} */}
-    </Container>
+      {isLoading && <Spinner />}
+    </>
   );
 }
 
-export default ContactsPage
+export default ContactsPage;

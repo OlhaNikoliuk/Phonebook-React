@@ -1,16 +1,29 @@
 import styled from '@emotion/styled/macro';
 
-export const CustomForm = styled.form`
+export const FormWrap = styled.div`
+  background-color: var(--bg-section);
+  width: 450px;
   display: flex;
   flex-wrap: wrap;
+  margin: 0 auto;
+  margin-top: 150px;
+  padding: 15px;
+  border-radius: 5px;
+  color: var(--text-color-main);
 `;
 
+export const LogInTitle = styled.h2`
+  text-align: start;
+`;
+export const CustomForm = styled.form``;
+
 export const Label = styled.label`
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
   align-items: baseline;
   text-align: start;
-  font-size: 20px;
-  margin-bottom: 20px;
+  font-size: 18px;
+  margin-bottom: 10px;
 
   & > svg {
     margin-right: 10px;
@@ -43,6 +56,7 @@ export const Input = styled.input`
 
 export const Button = styled.button`
   display: block;
+  min-width: 100px;
   background-color: white;
   border: none;
   border-radius: 4px;
@@ -62,8 +76,7 @@ export const Button = styled.button`
 
   &:hover,
   &:focus {
-    color: #f1f1f2;
-    background-color: #283655;
+    color: #283655;
     transform: scale(1.03);
   }
 `;
