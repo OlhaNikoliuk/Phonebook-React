@@ -1,23 +1,16 @@
 import styled from '@emotion/styled';
 
 export const Wrapper = styled.div`
-  width: 500px;
+ background-color: var(--table-bg);
+  width: 420px;
   display: block;
-  padding: 20px 30px;
+  
   margin: 0 auto;
-  margin-top: 40px;
-
-  text-align: center;
-
-  background-color: var(--bg-section);
-  color: var(--text-color-main);
-  border-radius: 4px;
-  box-shadow: 4px 4px 8px 0px rgba(154, 158, 171, 0.2);
-
-  &:not(:last-child) {
-    margin-bottom: 30px;
-  }
-`;
+  margin-top: 80px;
+  padding: 15px;
+  border-radius: 5px;
+  color: var(--black-color);
+  box-shadow: var(--box-shadow);`
 
 export const Title = styled.h2`
   display: inline-block;

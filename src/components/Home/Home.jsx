@@ -1,7 +1,7 @@
-import { Title } from './Home.styled';
+import { HomePage } from './Home.styled';
 
 function Home() {
-  return <Title></Title>;
+  return <HomePage></HomePage>;
 }
 
 export default Home;

@@ -8,6 +8,7 @@ export const Header = styled.header`
   display: flex;
   align-items: center;
   padding: 15px 40px;
-  background: #283655;
-  color: white;
+  font-family: var(--font-title);
+  box-shadow: 6px 7px 8px 0px rgba(103, 50, 35, 0.2);
+
 `;

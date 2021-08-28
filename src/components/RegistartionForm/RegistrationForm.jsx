@@ -4,7 +4,8 @@ import 'yup-phone';
 import { useDispatch } from 'react-redux';
 import { IoIosMail } from 'react-icons/io';
 import { RiLockPasswordFill } from 'react-icons/ri';
-import { login } from '../../redux/auth/auth-operations';
+import { FaUserAlt } from 'react-icons/fa';
+import * as authOperations from '../../redux/auth/auth-operations';
 import {
   FormWrap,
   Title,
@@ -14,20 +15,20 @@ import {
   Input,
   ErrorMsg,
   Button,
-} from './LoginForm.styled';
+} from './RegistartionForm.styled';
 
 const validationSchema = Yup.object().shape({
   email: Yup.string().email().required('Required'),
   password: Yup.string()
-    .min(7, 'Password should be 7 chars minimum.')
+    .min(7, 'Password is too short - should be 7 chars minimum.')
     .required('Required'),
 });
 
-const LoginForm = () => {
+const RegistrationForm = () => {
   const dispatch = useDispatch();
 
   const onFormSubmit = (user) => {
-    dispatch(login(user));
+    dispatch(authOperations.register(user));
   };
 
   return (
@@ -35,16 +36,26 @@ const LoginForm = () => {
       <Title>Log in to Phonebook</Title>
 
       <Formik
-        initialValues={{ email: '', password: '' }}
+        initialValues={{ name: '', email: '', password: '' }}
         validationSchema={validationSchema}
         onSubmit={(values, { resetForm }) => {
-          const { email, password } = values;
-          onFormSubmit({ email, password });
+          const { name, email, password } = values;
+          onFormSubmit({ name, email, password });
           resetForm();
         }}
       >
         <CustomForm autoComplete='off'>
-          <Label htmlFor='firstName'>
+          <Label>
+            <LabelWrap>
+              <FaUserAlt size='16' />
+              Name
+            </LabelWrap>
+            <Input type='text' name='name' placeholder='Chandler Bing' />
+            <ErrorMessage name='name' component={ErrorMsg} />
+          </Label>
+
+  
+          <Label>
             <LabelWrap>
               <IoIosMail size='18' />
               Email
@@ -52,7 +63,8 @@ const LoginForm = () => {
             <Input type='email' name='email' placeholder='example@mail.com' />
             <ErrorMessage name='name' component={ErrorMsg} />
           </Label>
-          <Label htmlFor='firstName'>
+
+          <Label>
             <LabelWrap>
               <RiLockPasswordFill size='18' />
               Password
@@ -68,4 +80,4 @@ const LoginForm = () => {
   );
 };
 
-export default LoginForm;
+export default RegistrationForm;

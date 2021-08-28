@@ -1,9 +1,12 @@
 import styled from '@emotion/styled/macro';
+// import logo from '../../images/logo.png';
+import logo1 from '../../images/logo1.png';
 
-export const Title = styled.p`
-  font-size: 32px;
-  font-weight: 700;
-  color: var(--text-color-main);
-  text-align: center;
-  margin-top: 150px;
+export const HomePage = styled.div`
+  background-image: url(${logo1});
+  width: 100%;
+  height: 80%;
+  /* margin-top: 20px; */
+  background-position: center;
+  background-repeat: no-repeat;
 `;

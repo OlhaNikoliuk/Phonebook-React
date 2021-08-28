@@ -5,6 +5,7 @@ export const register = createAsyncThunk(
   'auth/register',
   async (credentials) => {
     const data = await phonebookAPI.register(credentials);
+    console.log(data.code)
     return data;
   }
 );

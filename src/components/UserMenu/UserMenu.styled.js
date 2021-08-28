@@ -7,20 +7,21 @@ export const UserInfoWrap = styled.div`
 `;
 
 export const Welcome = styled.span`
-  font-size: 26px;
-  font-weight: 700;
+  font-size: 24px;
+  line-height: 36px;
+  font-weight: 400;
   margin-right: 12px;
-  color: #ec96a4;
+  color: var(--black-color);
 `;
 
 export const OutBtn = styled.button`
   display: inline-flex;
-  background-color: white;
+  background-color: var(--accent-color);
   border: none;
   border-radius: 4px;
   outline: none;
   padding: 4px 8px;
-  color: #ec96a4;
+  color: var(--accent-color-light);
   font-weight: bold;
   font-size: 14px;
   line-height: 24px;
@@ -32,7 +33,7 @@ export const OutBtn = styled.button`
 
   &:hover,
   &:focus {
-    color: #283655;
+    color: var(--black-color);
     transform: scale(1.03);
   }
 `;

@@ -1,15 +1,18 @@
-import styled from "@emotion/styled/macro";
+import styled from '@emotion/styled/macro';
 
 export const FilterInput = styled.input`
+  display: block;
   margin-top: 5px;
   margin-bottom: 5px;
   width: 400px;
   height: 35px;
 
   border: none;
-  border-radius: 4px;
+
   padding-left: 15px;
-  color: #444c5c;
+  
+  background-color: transparent;
+  border-bottom: 1px solid var(--black-color);
 
   &:placeholder-shown {
     font-size: 14px;
@@ -18,8 +21,8 @@ export const FilterInput = styled.input`
   &:hover,
   &:focus {
     outline: none;
-    border: 1px solid #444c5c;
-    box-shadow: 3px 4px 5px 0px rgb(120 165 163 / 20%);
+    border-bottom: 2px solid var(--black-color);
+    
   }
 `;
 
@@ -32,14 +35,6 @@ export const Label = styled.label`
 
   &:not(:last-child) {
     margin-bottom: 10px;
-  }
-  & input {
-    margin-top: 5px;
-    width: 400px;
-    height: 35px;
-
-    border: none;
-    border-radius: 4px;
   }
   & > svg {
     margin-right: 10px;

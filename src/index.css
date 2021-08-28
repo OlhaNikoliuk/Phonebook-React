@@ -4,18 +4,26 @@
   --text-color-accent: #ec96a4;
   --notification-color: #cb0000;
   --main-font: "Alegreya Sans", sans-serif;
+
+  --main-color-bg: #af7153;
+  --accent-color:#673223; 
+  --black-color:#261310;
+  --accent-color-light:#e1cec3;
+  --table-bg: #a68677;
+  --font-main:'Raleway', sans-serif;
+  --font-title:'Forum';
+  --box-shadow: 6px 7px 8px 0px rgba(103, 50, 35, 0.2);
 }
+
 
 body {
   margin: 0;
-  font-family: "Alegreya Sans", sans-serif;
+  font-family: 'Forum';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  background-image: url("./images/contact-bcg.jpeg");
-  background-size: cover;
+  background-color: var(--accent-color-light);
+  /* background-color: var(--main-color-bg); */
   background-repeat: no-repeat;
-  background-attachment:fixed;
 }
 
 code {

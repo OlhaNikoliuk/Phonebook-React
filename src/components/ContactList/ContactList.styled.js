@@ -10,7 +10,7 @@ export const List = styled.ul`
 `;
 
 export const ListItem = styled.li`
-  border: 1px solid white;
+  border: 1px solid var(--accent-color);
   border-radius: 5px;
   padding: 8px;
   display: flex;
@@ -28,12 +28,12 @@ export const Button = styled.button`
   display: inline-flex;
   align-items: center;
 
-  background-color: white;
+  background-color: var(--accent-color);
   border: none;
   border-radius: 4px;
   outline: none;
   padding: 4px 8px;
-  color: var(--text-color-accent);
+  color: var(--accent-color-light);
 
   font-size: 17px;
   line-height: 20px;
@@ -46,8 +46,9 @@ export const Button = styled.button`
 
   &:hover,
   &:focus {
-    color: #f1f1f2;
-    background-color: #444c5c;
+    background-color: var(--accent-color-light);
+    color: var(--accent-color);
+    
     transform: scale(1.03);
   }
   & > svg {

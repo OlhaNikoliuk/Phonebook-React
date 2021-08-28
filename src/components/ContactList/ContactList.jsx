@@ -2,6 +2,8 @@ import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { BsTrashFill } from 'react-icons/bs';
 import { RiContactsFill } from 'react-icons/ri';
+import {MdDelete} from 'react-icons/md'
+import toast from 'react-hot-toast';
 import { List, ListItem, Button } from './ContactList.styled';
 import {
   fetchContacts,
@@ -17,6 +19,17 @@ function ContactList() {
     dispatch(fetchContacts());
   }, [dispatch]);
 
+  const handleDelete =(contactId,contactName)=>{
+    let iconStyles = { color: '#ec96a4', size:'24px' };
+    dispatch(deleteContact(contactId))
+    toast(`Contact ${contactName} deleted`, {
+      icon: <MdDelete style={iconStyles}/>,
+      duration: 3000,
+      position: 'top-right',
+    });
+
+  }
+
   return (
     <List>
       {contacts.map((contact) => {
@@ -26,7 +39,7 @@ function ContactList() {
             {contact.name}: {contact.number}
             <Button
               type='button'
-              onClick={() => dispatch(deleteContact(contact.id))}
+              onClick={()=>(handleDelete(contact.id, contact.name))}
             >
               Delete
               <BsTrashFill></BsTrashFill>
