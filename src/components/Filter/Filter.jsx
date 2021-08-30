@@ -7,26 +7,25 @@ import { changeFilter } from '../../redux/contacts/contacts-slice';
 function Filter() {
   const value = useSelector(getFilterValue);
   const dispatch = useDispatch();
-  
+
   const onFilterChange = (e) => {
     dispatch(changeFilter(e.target.value));
   };
-
+  
   return (
-    <div>
-      <Label>
-        <FaSearch size='14'></FaSearch>Find contacts by name
-        <FilterInput
-          type='text'
-          name='filter'
-          title='Введите запрос для поиска'
-          required
-          onChange={onFilterChange}
-          value={value}
-          autoComplete='off'
-        />
-      </Label>
-    </div>
+    <Label>
+      <FaSearch size='14'></FaSearch>Find contacts by name
+      <FilterInput
+        type='text'
+        name='filter'
+        title='Enter name to search'
+        required
+        onChange={onFilterChange}
+        value={value}
+        autoComplete='off'
+        placeholder='name'
+      />
+    </Label>
   );
 }
 

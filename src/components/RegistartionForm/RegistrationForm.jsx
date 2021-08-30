@@ -1,5 +1,5 @@
 import { Formik, ErrorMessage } from 'formik';
-import * as Yup from 'yup';
+import * as yup from 'yup';
 import 'yup-phone';
 import { useDispatch } from 'react-redux';
 import { IoIosMail } from 'react-icons/io';
@@ -17,11 +17,10 @@ import {
   Button,
 } from './RegistartionForm.styled';
 
-const validationSchema = Yup.object().shape({
-  email: Yup.string().email().required('Required'),
-  password: Yup.string()
-    .min(7, 'Password is too short - should be 7 chars minimum.')
-    .required('Required'),
+const validationSchema = yup.object().shape({
+  name: yup.string().required('Please enter name'),
+  email: yup.string().email().required('Required'),
+  password: yup.string().required('Required').min(7, 'Password should be 7 chars minimum.'),
 });
 
 const RegistrationForm = () => {
@@ -54,14 +53,13 @@ const RegistrationForm = () => {
             <ErrorMessage name='name' component={ErrorMsg} />
           </Label>
 
-  
           <Label>
             <LabelWrap>
               <IoIosMail size='18' />
               Email
             </LabelWrap>
             <Input type='email' name='email' placeholder='example@mail.com' />
-            <ErrorMessage name='name' component={ErrorMsg} />
+            <ErrorMessage name='email' component={ErrorMsg} />
           </Label>
 
           <Label>
@@ -70,7 +68,7 @@ const RegistrationForm = () => {
               Password
             </LabelWrap>
             <Input type='password' name='password' placeholder='password' />
-            <ErrorMessage name='number' component={ErrorMsg}></ErrorMessage>
+            <ErrorMessage name='password' component={ErrorMsg}></ErrorMessage>
           </Label>
 
           <Button type='submit'>Log in</Button>

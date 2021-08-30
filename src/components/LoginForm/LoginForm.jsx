@@ -1,6 +1,6 @@
 import { Formik, ErrorMessage } from 'formik';
-import * as Yup from 'yup';
-import 'yup-phone';
+import * as yup from 'yup';
+// import 'yup-phone';
 import { useDispatch } from 'react-redux';
 import { IoIosMail } from 'react-icons/io';
 import { RiLockPasswordFill } from 'react-icons/ri';
@@ -16,11 +16,9 @@ import {
   Button,
 } from './LoginForm.styled';
 
-const validationSchema = Yup.object().shape({
-  email: Yup.string().email().required('Required'),
-  password: Yup.string()
-    .min(7, 'Password should be 7 chars minimum.')
-    .required('Required'),
+const validationSchema = yup.object().shape({
+  email: yup.string().email().required('Required'),
+  password: yup.string().required('Required').min(7, 'Password should be 7 chars minimum.'),
 });
 
 const LoginForm = () => {
@@ -50,7 +48,7 @@ const LoginForm = () => {
               Email
             </LabelWrap>
             <Input type='email' name='email' placeholder='example@mail.com' />
-            <ErrorMessage name='name' component={ErrorMsg} />
+            <ErrorMessage name='email' component={ErrorMsg} />
           </Label>
           <Label htmlFor='firstName'>
             <LabelWrap>
@@ -58,7 +56,7 @@ const LoginForm = () => {
               Password
             </LabelWrap>
             <Input type='password' name='password' placeholder='password' />
-            <ErrorMessage name='number' component={ErrorMsg}></ErrorMessage>
+            <ErrorMessage name='password' component={ErrorMsg}></ErrorMessage>
           </Label>
 
           <Button type='submit'>Log in</Button>

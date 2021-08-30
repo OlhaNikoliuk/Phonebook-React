@@ -2,7 +2,6 @@ import React from 'react';
 import { Formik, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import 'yup-phone';
-import { v4 as uuidv4 } from 'uuid';
 import toast from 'react-hot-toast';
 import { useSelector, useDispatch } from 'react-redux';
 import { FaAddressBook, FaUserAlt, FaPhoneAlt } from 'react-icons/fa';
@@ -26,12 +25,11 @@ const validationSchema = Yup.object({
     .phone(
       'UA',
       true,
-      'Please enter phone number in correct format  38(0**) *** ****'
+      'Please enter phone number in correct format  0** *** ****'
     )
     .required(),
 });
 
-console.log(validationSchema.fields.number.isValidSync('380934456677'));
 
 const FormikContactForm = () => {
   const allContacts = useSelector(getContactList);
@@ -82,7 +80,7 @@ const FormikContactForm = () => {
           <Label htmlFor='firstName'>
             <LabelWrap><FaPhoneAlt size='16' />
             Number</LabelWrap>
-            <Input type='text' name='number' placeholder='38(0**) *** ****' />
+            <Input type='text' name='number' placeholder='0** *** ****' />
             <ErrorMessage name='number' component={ErrorMsg}></ErrorMessage>
           </Label>
 

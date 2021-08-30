@@ -3,7 +3,6 @@ import { HiUsers } from 'react-icons/hi';
 import { FaAddressBook } from 'react-icons/fa';
 import { useSelector } from 'react-redux';
 import Section from '../components/Section/Section';
-import ContactForm from '../components/ContactForm/ContactForm';
 import FormikContactForm from '../components/FormikContactForm/FormikContactForm';
 import ContactList from '../components/ContactList/ContactList';
 import Filter from '../components/Filter/Filter';

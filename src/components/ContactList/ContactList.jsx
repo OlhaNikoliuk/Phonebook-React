@@ -42,7 +42,7 @@ function ContactList() {
               onClick={()=>(handleDelete(contact.id, contact.name))}
             >
               Delete
-              <BsTrashFill></BsTrashFill>
+              <BsTrashFill/>
             </Button>
           </ListItem>
         );

@@ -10,10 +10,12 @@ export const FilterInput = styled.input`
   border: none;
 
   padding-left: 15px;
-  
+
   background-color: transparent;
   border-bottom: 1px solid var(--black-color);
-
+  &::placeholder {
+    color: var(--accent-color-light);
+  }
   &:placeholder-shown {
     font-size: 14px;
   }
@@ -22,7 +24,6 @@ export const FilterInput = styled.input`
   &:focus {
     outline: none;
     border-bottom: 2px solid var(--black-color);
-    
   }
 `;
 
